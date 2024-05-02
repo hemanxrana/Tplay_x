@@ -61,8 +61,8 @@ const generateM3u = async (ud) => {
     m3uStr = '#EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"\n\n';
 
     for (let i = 0; i < chansList.length; i++) {
-        m3uStr += '#EXTINF:-1 tvg-id="' + chansList[i].id.toString() + '" ';
-        m3uStr += 'tvg-logo="https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/' + (chansList[i].tvg_logo) + '" 'group-title="' + (chansList[i].group_title) + '",' + chansList[i].name + '\n';
+        m3uStr += '#EXTINF:-1 tvg-id="' + chansList[i].id.toString() + '" , 'tvg-logo="https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/' + (chansList[i].tvg_logo) + '" ';
+        m3uStr += 'group-title="' + (chansList[i].group_title) + '",' + chansList[i].name + '\n';
         m3uStr += '#KODIPROP:inputstream.adaptive.license_type=clearkey\n';
         m3uStr += '#KODIPROP:inputstream.adaptive.license_key=' + chansList[i].clearkey + '\n';
         m3uStr += '#EXTVLCOPT:http-user-agent=' + chansList[i].stream_headers + '\n';
